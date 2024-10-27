@@ -8,11 +8,84 @@
     </head>
     <body>
         <a-scene>
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-sky color="#ECECEC"></a-sky>
+            <a-assets>
+                <a-asset-item id="escena_Obj" src="modelos/Escena.obj"></a-asset-item>
+                <a-asset-item id="escena_Mtl" src="modelos/Escena.mtl"></a-asset-item>
+                <a-asset-item id="pumpkin" src="modelos/halloween_pumpkin.glb"></a-asset-item>
+            </a-assets>
+            <a-entity 
+                    gltf-model="modelos/halloween_pumpkin.glb" 
+                    position="0 1.3381 0" 
+                    scale="3.6232 3.6232 3.6232" 
+                    rotation="0 -90 0"
+                    animation__1position="
+                            property: position; 
+                            from: 7.669 1.338 0;
+                            to: -5.246 1.338 0;
+                            dur: 3500; 
+                            easing: linear;"
+                    animation__1rotation="
+                            property: rotation;
+                            delay: 1550;
+                            from: 0 -90 0;
+                            to: -8.580 -10 32;
+                            dur: 500;
+                            easing: linear;"
+                    animation__1scale="
+                            property: scale;
+                            delay: 1550;
+                            from: 3.6232 3.6232 3.6232;
+                            to: 7 7 7;
+                            dur: 450;
+                            easing: linear;"
+                    animation__2position="
+                            property: position;
+                            from: -5.246 1.338 0;
+                            to: -5.246 -8.338 0;
+                            delay: 3500;
+                            dur: 250;
+                            easing: linear;"
+                    animation__2scale="
+                            property: scale;
+                            from: 7 7 7;
+                            to: 0.02 0.02 0.02;
+                            delay: 3500;
+                            dur: 250;
+                            easing: linear;"
+                    animation__3position="
+                            property: position;
+                            from: -5.246 -8.338 0;
+                            to: 0 -8.338 -5.016;
+                            delay: 3750;
+                            dur: 250;
+                            easing: linear;"
+                    animation__4position="
+                            property: position;
+                            from: 0 -8.338 -5.016;
+                            to: 0 1.338 -5.016;
+                            delay: 4000;
+                            dur: 700;
+                            easing: linear;"
+                    animation__3scale="
+                            property: scale;
+                            from: 0.02 0.02 0.02;
+                            to: 21 21 21;
+                            delay: 4000;
+                            dur: 700;
+                            easing: easeInQuad"
+                    animation__2rotate="
+                            property: rotation;
+                            from: -8.580 -10 32;
+                            to: 0 0 0;
+                            delay: 4700;
+                            dur: 1000;
+                            easing: linear;"       
+                    >
+            </a-entity>
+            <a-entity obj-model=" obj: #escena_Obj; mtl: #escena_Mtl"></a-entity>
+            <a-sky color="black"></a-sky>
+            <a-entity camera="" position="0.111 1.6 2.11" wasd-controls="" rotation="-5.615 -0.4580000000000001 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+            <a-entity light="intensity: 0.6; castShadow: true" position="-0.5 4.76935 1"></a-entity>
         </a-scene>
     </body>
 </html>
